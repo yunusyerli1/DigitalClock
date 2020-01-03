@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Project: Interactive slideshow</title>
+        <style>
+            a.button1{
+                background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+
+                }
+            
+  
+        </style>
+    </head>
+    <body>
+        <a href="#" class="button1">Get Time</a>
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(".button1").click(function(){
+            basla();
+            });
+            function basla(){
+                let date=new Date();
+                let hours=date.getHours();
+                let minutes=date.getMinutes();
+                let seconds=date.getSeconds();
+            
+                if(hours<10){
+                    hours= "0"+hours;
+                }
+                if(minutes<10){
+                    minutes="0"+minutes;
+                }
+                if(seconds<10){
+                    seconds="0"+seconds;
+                }
+               $("body").text(" ");
+                document.write(hours+":"+minutes+":"+seconds);
+                setInterval(basla,1000);
+            }
+        
+    </script> 
+    
+    </body>
+</html>
